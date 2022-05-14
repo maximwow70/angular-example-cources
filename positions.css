@@ -1,0 +1,24 @@
+div{
+    display: inline-block;
+    font-size: 40px;
+}
+.parent{
+    background-color: blue;
+    width: 1000px;
+    height: 2000px;
+    position: relative;
+    
+}
+.child{
+background-color: yellow;
+width: 300px;
+height: 300px;
+}
+#child_2{
+    position: absolute;
+    left: 0px;
+}
+#child_1{
+    /* position: relative; */
+    z-index: 1;
+}
