@@ -1,3 +1,61 @@
+@font-face {
+    font-family: Exo2Regular;
+    src: url(./fonts/Exo2Regular.ttf);
+}
+
 html {
     display: flex;
+    font-family: Exo2Regular;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+h2, h3, p {
+    margin: 0;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px;
+    background-image: url("./img/bg/bgclients.jpg");
+
+    color: #fff;
+}
+.team-item {
+    margin: 0 20px;
+    width: 300px;
+    text-align: center;
+}
+.team-item-photo {
+    margin-bottom: 10px;
+
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(191, 191, 191);
+}
+.team-item-name {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: normal;
+}
+.team-item-contract {
+    margin-bottom: 30px;
+    font-size: 12px;
+    font-weight: normal;
+    color: rgb(169, 118, 126);
+}
+
+.team-item-description {
+    font-size: 14px;
+    opacity: 0.6;
 }
