@@ -1,0 +1,15 @@
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.feature__icon {
+    margin-bottom: 20px;
+}
+.feature__title {
+    margin-bottom: 10px;
+}
+.feature__description {
+    text-align: center;
+}

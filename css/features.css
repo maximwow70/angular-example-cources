@@ -1,0 +1,28 @@
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 100px 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.features__subtitle {
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+    color: rgb(190, 67, 86);
+}
+.features__title {
+    margin-bottom: 80px;
+}
+.features__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.features__feature {
+    margin: 0 20px;
+    width: 300px;
+}
