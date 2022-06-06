@@ -1,78 +1,74 @@
-"use strict";
+(function () {
+  const book1 = new Book(1, "name 1", new Date(), "Elon Mask");
 
-var qwe;
+  const library = new Library(
+    [
+      book1, // 0
+      new Book(2, "name 2", new Date(), "Maksim"), // 1
+      new Book(3, "name 3", new Date(), "Alex"), // 2
+    ],
+    "National Library"
+  );
+  console.log(library.books);
+  console.log(library.books[0]);
+  console.log(library.books[library.length - 1]);
 
-function sum(a, b = 10) {
-  const summa = a + b;
-  return summa;
-}
-console.log(sum(1));
+  library.addBook(new Book(4, "name 4", new Date(), "Elon Mask"));
+  console.log(library);
 
-console.error("Error");
-console.warn("Warning");
-// my single row comment
+  library.setAuthor(10, "Vasya");
+  console.log(library);
 
-let myString = true;
-console.log(myString);
+  //   library.unshift(new Book(0, "name 0", new Date(), "Elon Mask"));
+  //   console.log(library);
 
-myString = 5;
-console.log(myString);
+  //   const last = library.pop();
+  //   console.log(last, library);
 
-myString = "My first string";
-console.log(myString);
+  //   console.log(library.concat(last));
+  //   console.log(library);
 
-let str = "str";
-str = "str2";
-str = `str2 ${myString} ${5 - 10} ${sum(2, 1)}`;
-console.log(str);
+  //   console.log(library.indexOf(book1));
 
-let myBooleanVariable;
-console.log(myBooleanVariable);
-myBooleanVariable = false;
-console.log(myBooleanVariable);
-myBooleanVariable = 1 < 0;
-console.log(myBooleanVariable);
-myBooleanVariable = undefined;
-console.log(myBooleanVariable);
-myBooleanVariable = null;
-console.log(myBooleanVariable);
+  //   console.log(library.reverse());
 
-// it's an object
-let person = {
-  name: "Vasya",
-  age: 5,
-  permissions: {
-    admin: false,
-    myFavorite: true,
-  },
-};
-person.permissions.admin;
+  //   function getBooksByAuthor(books, author) {
+  //     const booksByAuthor = [];
+  //     for (let i = 0; i < books.length; i++) {
+  //       if (books[i].author === author) {
+  //         booksByAuthor.push(books[i]);
+  //       }
+  //     }
+  //     return booksByAuthor;
+  //   }
 
-const list = [1, 2, 3];
+  //   function getBooksByAuthor2(books, author) {
+  //     return books.filter((book) => book.author === author);
+  //   }
 
-// alert("Hello");
+  //   console.log("filtration:");
+  //   console.log(getBooksByAuthor(library, "Elon Mask"));
+  //   console.log(getBooksByAuthor(library, "Maksim"));
 
-// let result = prompt("Are you ok?");
-// console.log(result);
+  //   console.log(getBooksByAuthor2(library, "Elon Mask"));
 
-// let isBoss = confirm("Ты здесь главный?");
-// console.log(isBoss); // true, если нажата OK
+  //   console.log(library.find((book) => book.author === "Maksim"));
+  //   console.log(library.find((book) => book.author === "asdasdasdas"));
 
-if (false) {
-  console.log("привет");
-  console.log();
-} else if (true) {
-  console.log();
-} else {
-  console.log("Пока");
-}
+  //   const authors = library.map((book) => book.author);
+  //   console.log(authors);
 
-let a;
-if (1 > 2) {
-  a = 5;
-} else {
-  a = 6;
-}
+  //   получить уникальные элементы
 
-const b = !sum(2, -2) ? sum(2, 3) : sum(sum(5, 6), sum(1, 2));
-console.log(b);
+  //   setAuthor(3, "New Author");
+  //   console.log(library);
+
+  //   function sortByAuthor() {
+  //     library = library.sort((book, otherBook) =>
+  //       book.author < otherBook.author ? 1 : -1
+  //     );
+  //   }
+
+  //   sortByAuthor();
+  //   console.log(library);
+})();
