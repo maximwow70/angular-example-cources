@@ -16,7 +16,7 @@
 .features__title {
     margin-bottom: 80px;
 }
-.features__list {
+.features__list:first-child {
     display: flex;
     flex-direction: row;
     justify-content: center;
