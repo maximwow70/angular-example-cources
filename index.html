@@ -7,21 +7,23 @@
     <title>My title</title>
 
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./css/library.css">
+    <link rel="stylesheet" href="./components/library/library.css">
   </head>
   <body>
     
     <div class="app">
       <div class="app__library"></div>
+      <div class="app__usa-library"></div>
     </div>
     
 
     <!-- model start -->
-    <script src="./js/models/book.js"></script>
-    <script src="./js/models/audio-book.js"></script>
-    <script src="./js/models/e-book.js"></script>
-    <script src="./js/models/library.js"></script>
-    <script src="./js/library.component.js"></script>
+    <script src="./components/library/models/book.js"></script>
+    <script src="./components/library/models/audio-book.js"></script>
+    <script src="./components/library/models/e-book.js"></script>
+    <script src="./components/library/models/library.js"></script>
+    <script src="./components/library/library.render.js"></script>
+    <script src="./components/library/library.controller.js"></script>
     <!-- model end -->
 
     <script src="./main.js"></script>

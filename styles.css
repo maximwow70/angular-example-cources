@@ -19,3 +19,8 @@ p {
   margin: 0;
   font-weight: normal;
 }
+
+.app__usa-library {
+  background-color: #333;
+  padding: 20px;
+}

@@ -4,6 +4,9 @@
   background-color: #ddd;
   color: #333;
 }
+.library__title {
+  margin-bottom: 10px;
+}
 .library__book {
   display: flex;
   flex-direction: row;
