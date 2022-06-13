@@ -1,0 +1,27 @@
+.library {
+  width: 300px;
+  padding: 20px;
+  background-color: #ddd;
+  color: #333;
+}
+.library__book {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+}
+.library__book:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.library__book-id {
+  min-width: 20px;
+  margin-right: 5px;
+}
+.library__book-name {
+  flex: 1;
+}
