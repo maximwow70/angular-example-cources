@@ -19,16 +19,3 @@ p {
   margin: 0;
   font-weight: normal;
 }
-
-.app__library {
-  margin-bottom: 20px;
-}
-
-.app__library-name {
-  padding: 20px;
-}
-
-.app__library-destroy,
-.app__library-create {
-  margin-left: 20px;
-}

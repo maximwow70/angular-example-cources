@@ -14,6 +14,10 @@ class Library {
     this.books = [...this.books, book];
   }
 
+  removeBook(id) {
+    this.books = this.books.filter((book) => book.id !== id);
+  }
+
   setAuthor(id, newAuthor) {
     this.books = this.books.map((book) => {
       return book.id === id

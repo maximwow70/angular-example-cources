@@ -7,9 +7,22 @@ class LibraryRender extends ComponentRender {
   addBookInputHTMLElement;
   addBookButtonHTMLElement;
 
+  get newBookName() {
+    return this.addBookInputHTMLElement.value;
+  }
+  set newBookName(value) {
+    this.addBookInputHTMLElement.value = value;
+  }
+
   getBookElements(library) {
     return library.books.map((book) => {
-      return this.createElement("div", ["library__book"], book.name);
+      const bookHTMLElement = this.createElement(
+        "div",
+        ["library__book"],
+        book.name
+      );
+      bookHTMLElement.setAttribute("data-id", book.id);
+      return bookHTMLElement;
     });
   }
 
