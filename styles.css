@@ -20,7 +20,10 @@ p {
   font-weight: normal;
 }
 
-.app__usa-library {
-  background-color: #333;
+.app__library {
+  margin-bottom: 20px;
+}
+
+.app__library-name {
   padding: 20px;
 }

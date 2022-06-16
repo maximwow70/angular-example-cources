@@ -7,6 +7,9 @@
 .library__title {
   margin-bottom: 10px;
 }
+.library__book-list {
+  margin-bottom: 10px;
+}
 .library__book {
   display: flex;
   flex-direction: row;
@@ -26,5 +29,15 @@
   margin-right: 5px;
 }
 .library__book-name {
+  flex: 1;
+}
+
+.library__add-book {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.library__add-book-input {
   flex: 1;
 }

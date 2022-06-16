@@ -7,15 +7,16 @@
     <title>My title</title>
 
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./components/library/library.css">
+    <link rel="stylesheet" href="./components/library/library.css" />
   </head>
   <body>
-    
     <div class="app">
       <div class="app__library"></div>
-      <div class="app__usa-library"></div>
+      <div class="app__library-name">
+        <label class="app__library-name-label">Library name: </label>
+        <input class="app__library-name-input" type="text" />
+      </div>
     </div>
-    
 
     <!-- model start -->
     <script src="./components/library/models/book.js"></script>

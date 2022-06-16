@@ -1,17 +1,31 @@
 class ComponentRender {
   createElement(tag, classList, html) {
     const element = document.createElement(tag);
-    classList.forEach((className) => {
-      element.classList.add(className);
-    });
+    this.updateElement(element, classList, html);
+    return element;
+  }
+  updateElement(element, classList, html) {
+    if (classList) {
+      element.setAttribute("class", "");
+      classList.forEach((className) => {
+        element.classList.add(className);
+      });
+    }
     if (html) {
       element.innerHTML = html;
     }
-    return element;
   }
 }
 
 class LibraryRender extends ComponentRender {
+  libraryHTMLElement;
+
+  titleHTMLElement;
+  bookListHTMLElement;
+
+  addBookInputHTMLElement;
+  addBookButtonHTMLElement;
+
   getBookElements(library) {
     return library.books.map((book) => {
       return this.createElement("div", ["library__book"], book.name);
@@ -38,17 +52,58 @@ class LibraryRender extends ComponentRender {
     );
   }
 
-  render(node, library, classList = []) {
-    node.innerHTML = "";
+  getAddBookElement() {
+    const addBookHTMLElement = this.createElement("div", ["library__add-book"]);
 
-    const libraryHTMLElement = this.createElement("div", [
+    const inputElement = this.createElement("input", [
+      "library__add-book-input",
+    ]);
+    addBookHTMLElement.appendChild(inputElement);
+
+    const buttonElement = this.createElement(
+      "button",
+      ["library__add-book-button"],
+      "add"
+    );
+    addBookHTMLElement.appendChild(buttonElement);
+
+    return addBookHTMLElement;
+  }
+
+  render(node, library, classList = []) {
+    // shouldn't do this
+    // node.innerHTML = "";
+
+    this.libraryHTMLElement = this.createElement("div", [
       "library",
       ...classList,
     ]);
 
-    libraryHTMLElement.appendChild(this.getTitleElement(library));
-    libraryHTMLElement.appendChild(this.getBookListElement(library));
+    this.titleHTMLElement = this.getTitleElement(library);
+    this.libraryHTMLElement.appendChild(this.titleHTMLElement);
 
-    node.appendChild(libraryHTMLElement);
+    this.bookListHTMLElement = this.getBookListElement(library);
+    this.libraryHTMLElement.appendChild(this.bookListHTMLElement);
+
+    const addBook = this.getAddBookElement();
+    this.libraryHTMLElement.appendChild(addBook);
+
+    node.appendChild(this.libraryHTMLElement);
+  }
+
+  updateBooks(library) {
+    this.bookListHTMLElement.innerHTML = "";
+    const bookHTMLElements = this.getBookElements(library);
+    bookHTMLElements.forEach((element) =>
+      this.bookListHTMLElement.appendChild(element)
+    );
+  }
+
+  updateLibraryName(library) {
+    this.updateElement(
+      this.titleHTMLElement,
+      undefined,
+      `<em>${library.name}</em>`
+    );
   }
 }
