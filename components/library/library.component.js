@@ -17,4 +17,8 @@ class LibraryComponent {
     this.library.name = name;
     this.libraryRender.updateLibraryName(this.library);
   }
+
+  destroy() {
+    this.libraryRender.destroy();
+  }
 }

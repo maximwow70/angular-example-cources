@@ -15,10 +15,24 @@ setTimeout(() => {
   libraryComponent.updateLibraryName("new Library");
 }, 2000);
 
+// const libraryComponent1 = new LibraryComponent(
+//   document.querySelector(".app__library"),
+//   { name: "other", books: [new Book()] }
+// );
+
 // data binding
-const inputFromOtherComponent = document.querySelector(
-  ".app__library-name-input"
-);
+// const inputFromOtherComponent = document.querySelector(
+//   ".app__library-name-input"
+// );
 // inputFromOtherComponent.addEventListener("input", (event) => {
 //   libraryComponent.updateLibraryName(inputFromOtherComponent.value);
 // });
+
+// add book
+
+// remove book
+
+// destroy
+// setTimeout(() => {
+//   libraryComponent.destroy();
+// }, 5000);

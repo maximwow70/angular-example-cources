@@ -74,6 +74,10 @@ class LibraryRender extends ComponentRender {
     node.appendChild(this.libraryHTMLElement);
   }
 
+  destroy() {
+    this.libraryHTMLElement.remove();
+  }
+
   updateBooks(library) {
     this.bookListHTMLElement.innerHTML = "";
     const bookHTMLElements = this.getBookElements(library);
