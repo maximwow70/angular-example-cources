@@ -19,6 +19,8 @@
   padding: 5px;
   background-color: #333;
   color: #fff;
+
+  cursor: pointer;
 }
 .library__book:not(:last-child) {
   margin-bottom: 2px;

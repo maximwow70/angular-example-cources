@@ -5,7 +5,7 @@ const data = new Library("National Library", [
   new Book(4, "name 4", new Date(), "Elon Mask"),
 ]);
 
-const libraryComponent = new LibraryComponent(
+let libraryComponent = new LibraryComponent(
   document.querySelector(".app__library"),
   data
 );
@@ -29,10 +29,21 @@ setTimeout(() => {
 // });
 
 // add book
+// add book from enter
 
 // remove book
 
 // destroy
-// setTimeout(() => {
-//   libraryComponent.destroy();
-// }, 5000);
+// document
+//   .querySelector(".app__library-destroy")
+//   .addEventListener("click", () => {
+//     libraryComponent.destroy();
+//     libraryComponent = null;
+//   });
+
+// document.querySelector(".app__library-create").addEventListener("click", () => {
+//   libraryComponent = new LibraryComponent(
+//     document.querySelector(".app__library"),
+//     data
+//   );
+// });
