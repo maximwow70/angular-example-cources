@@ -1,22 +1,3 @@
-class ComponentRender {
-  createElement(tag, classList, html) {
-    const element = document.createElement(tag);
-    this.updateElement(element, classList, html);
-    return element;
-  }
-  updateElement(element, classList, html) {
-    if (classList) {
-      element.setAttribute("class", "");
-      classList.forEach((className) => {
-        element.classList.add(className);
-      });
-    }
-    if (html) {
-      element.innerHTML = html;
-    }
-  }
-}
-
 class LibraryRender extends ComponentRender {
   libraryHTMLElement;
 
@@ -85,8 +66,10 @@ class LibraryRender extends ComponentRender {
     this.bookListHTMLElement = this.getBookListElement(library);
     this.libraryHTMLElement.appendChild(this.bookListHTMLElement);
 
-    const addBook = this.getAddBookElement();
-    this.libraryHTMLElement.appendChild(addBook);
+    const addBookHTMLElement = this.getAddBookElement();
+    this.addBookInputHTMLElement = addBookHTMLElement.children[0];
+    this.addBookButtonHTMLElement = addBookHTMLElement.children[1];
+    this.libraryHTMLElement.appendChild(addBookHTMLElement);
 
     node.appendChild(this.libraryHTMLElement);
   }

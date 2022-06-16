@@ -1,13 +1,24 @@
-const libraryController = new LibraryController();
-libraryController.renderLibrary();
-setTimeout(() => {
-  libraryController.addBook(new Book(1, "new Book", new Date(), {}));
-  libraryController.updateLibraryName("new Library");
-}, 3000);
+const data = new Library("National Library", [
+  new Book(1, "name 1", new Date(), undefined),
+  new Book(2, "name 2", new Date(), "Maksim"),
+  new Book(3, "name 3", new Date(), "Alex"),
+  new Book(4, "name 4", new Date(), "Elon Mask"),
+]);
 
+const libraryComponent = new LibraryComponent(
+  document.querySelector(".app__library"),
+  data
+);
+
+setTimeout(() => {
+  libraryComponent.addBook(new Book(1, "new Book", new Date(), {}));
+  libraryComponent.updateLibraryName("new Library");
+}, 2000);
+
+// data binding
 const inputFromOtherComponent = document.querySelector(
   ".app__library-name-input"
 );
 // inputFromOtherComponent.addEventListener("input", (event) => {
-//   libraryController.updateLibraryName(inputFromOtherComponent.value);
+//   libraryComponent.updateLibraryName(inputFromOtherComponent.value);
 // });
