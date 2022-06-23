@@ -9,6 +9,20 @@ class Library {
     this.books = books;
   }
 
+  static fromJSON(json) {
+    return new Library(
+      json?.name || "",
+      (json?.books || []).map((book) => Book.fromJSON(book))
+    );
+  }
+
+  static toJSON(library) {
+    return {
+      name: library.name,
+      books: (library.books || []).map(Book.toJSON),
+    };
+  }
+
   // #region methods
   addBook(book) {
     this.books = [...this.books, book];

@@ -30,6 +30,20 @@ class Book {
     this.author = author;
   }
 
+  static fromJSON(json) {
+    return new Book(json.id, json.name, json.date, json.details, json.author);
+  }
+
+  static toJSON(book) {
+    return {
+      id: book.id,
+      name: book.name,
+      date: book._date,
+      details: book.details,
+      author: book._author,
+    };
+  }
+
   static getDefaultAuthor() {
     return Book.defaultAuthor + "$";
   }

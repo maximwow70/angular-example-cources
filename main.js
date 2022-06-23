@@ -1,15 +1,17 @@
+const libraryStorage = new Storage("library");
+
 // #region data
-const data = new Library("National Library", [
-  new Book(1, "name 1", new Date(), undefined),
-  new Book(2, "name 2", new Date(), "Maksim"),
-  new Book(3, "name 3", new Date(), "Alex"),
-  new Book(4, "name 4", new Date(), "Elon Mask"),
-]);
+// const data = new Library("National Library", [
+//   BookCreator.createKingBook("King book 1"),
+//   BookCreator.createKingBook("King book 2"),
+//   BookCreator.createRowlingBook("Rowling book 1"),
+//   BookCreator.createRowlingBook("Rowling book 2"),
+// ]);
 // #endregion data
 
 let libraryComponent = new LibraryComponent(
   document.querySelector(".app__library"),
-  data
+  libraryStorage
 );
 
 // const libraryComponent1 = new LibraryComponent(
@@ -44,3 +46,23 @@ document.querySelector(".app__library-create").addEventListener("click", () => {
     data
   );
 });
+
+const customBook = new BookBuilder().addName("name 1").addAuthor("au").build();
+
+const customBook$ = new Observable(customBook);
+
+customBook$.subscribe("1", (book) => {
+  console.log(`action1 with: ${book.name}`);
+});
+customBook$.subscribe("2", (book) => {
+  console.log(`action2 with: ${book.name}`);
+});
+customBook$.subscribe("3", (book) => {
+  console.log(`action3 with: ${book.name}`);
+});
+
+customBook.name = "123";
+customBook$.next(customBook);
+
+window.customBook = customBook;
+window.customBook$ = customBook$;

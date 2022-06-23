@@ -1,17 +1,12 @@
 class LibraryComponent {
   libraryRender;
   library;
+  storage;
 
   updateTimeout;
   onAddBookButtonClick = (event) => {
     this.addBook(
-      new Book(
-        this.getNewId(),
-        this.libraryRender.newBookName,
-        new Date(),
-        {},
-        "Unknown"
-      )
+      BookCreator.createDefaultBook(this.libraryRender.newBookName)
     );
     this.libraryRender.newBookName = "";
     this.libraryRender.addBookButtonHTMLElement.disabled = !Boolean(
@@ -19,20 +14,29 @@ class LibraryComponent {
     );
   };
 
-  constructor(element, library) {
+  constructor(element, storage) {
+    this.storage = storage;
+
     this.libraryRender = new LibraryRender();
-    this.library = library;
+    this.library = Library.fromJSON(JSON.parse(this.storage.getData()));
+
+    // render
     this.libraryRender.render(element, this.library);
     // todo: separate method
     this.libraryRender.addBookButtonHTMLElement.disabled = !Boolean(
       this.libraryRender.newBookName
     );
+    // render end
 
-    this.updateTimeout = setTimeout(() => {
-      this.addBook(new Book(1, "new Book", new Date(), {}));
-      this.updateLibraryName("new Library");
-      console.log("error");
-    }, 2000);
+    // storage
+    this.storage.saveData(JSON.stringify(Library.toJSON(this.library)));
+    // storage end
+
+    // this.updateTimeout = setTimeout(() => {
+    //   this.addBook(BookCreator.createDefaultBook("book from timeout"));
+    //   this.updateLibraryName("new Library");
+    //   console.log(this.library.books);
+    // }, 2000);
 
     this.libraryRender.addBookButtonHTMLElement.addEventListener(
       "click",
@@ -52,15 +56,7 @@ class LibraryComponent {
       "keypress",
       (event) => {
         if (event.code === "Enter" && Boolean(this.libraryRender.newBookName)) {
-          this.addBook(
-            new Book(
-              this.getNewId(),
-              this.libraryRender.newBookName,
-              new Date(),
-              {},
-              "Unknown"
-            )
-          );
+          this.addBook(createDefaultBook(this.libraryRender.newBookName));
           this.libraryRender.newBookName = "";
           this.libraryRender.addBookButtonHTMLElement.disabled = !Boolean(
             this.libraryRender.newBookName
@@ -83,22 +79,19 @@ class LibraryComponent {
   addBook(book) {
     this.library.addBook(book);
     this.libraryRender.updateBooks(this.library);
+    this.storage.saveData(JSON.stringify(Library.toJSON(this.library)));
   }
 
   removeBook(id) {
     this.library.removeBook(id);
     this.libraryRender.updateBooks(this.library);
+    this.storage.saveData(JSON.stringify(Library.toJSON(this.library)));
   }
 
   updateLibraryName(name) {
     this.library.name = name;
     this.libraryRender.updateLibraryName(this.library);
-  }
-
-  getNewId() {
-    return this.library.books.length > 0
-      ? Math.max(...this.library.books.map((book) => book.id)) + 1
-      : 0;
+    this.storage.saveData(JSON.stringify(Library.toJSON(this.library)));
   }
 
   destroy() {
