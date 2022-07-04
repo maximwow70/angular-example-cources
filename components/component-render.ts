@@ -1,4 +1,4 @@
-class ComponentRender {
+export class ComponentRender {
   createElement(tag, classList, html) {
     const element = document.createElement(tag);
     this.updateElement(element, classList, html);

@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./components/app/app.css" />
     <link rel="stylesheet" href="./components/library/library.css" />
+    <link rel="stylesheet" href="./components/weather/weather.css" />
+
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.1/system.min.js"
+      integrity="sha512-hEUZNXwXBrWqdzUGvBheCYyBwT3OfFuc1HwumDzeMDK54TUioKjanhZiylIyREGBF/XXHtRx1q/Z4O1XANG4zg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+      integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div class="app">
@@ -23,11 +37,15 @@
       <button class="app__library-create">create library c:</button>
     </div>
 
+    <div class="weather"></div>
+
+    <!-- <script src="./components/weather/weather.js"></script>
+
     <script src="./components/component-render.js"></script>
     <script src="./components/storage.js"></script>
-    <script src="./components/observable.js"></script>
+    <script src="./components/observable.js"></script> -->
     <!-- library component start -->
-    <script src="./components/library/models/book.js"></script>
+    <!-- <script src="./components/library/models/book.js"></script>
     <script src="./components/library/models/audio-book.js"></script>
     <script src="./components/library/models/e-book.js"></script>
     <script src="./components/library/models/library.js"></script>
@@ -36,9 +54,12 @@
     <script src="./components/library/models/book.builder.js"></script>
 
     <script src="./components/library/library.render.js"></script>
-    <script src="./components/library/library.component.js"></script>
+    <script src="./components/library/library.component.js"></script> -->
     <!-- library component end -->
 
-    <script src="./main.js"></script>
+    <script src="./dist/main.js"></script>
+    <script>
+      require(["main"]);
+    </script>
   </body>
 </html>
