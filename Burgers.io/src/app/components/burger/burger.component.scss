@@ -1,0 +1,20 @@
+:host {
+  display: block;
+
+  &.light .burger[class] {
+    background-color: transparent;
+    color: #333;
+  }
+}
+
+:host-context(.body--dark) .burger {
+  background-color: #333;
+  border: 1px solid #333;
+  color: rgb(243, 243, 243);
+}
+
+.burger {
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+}
