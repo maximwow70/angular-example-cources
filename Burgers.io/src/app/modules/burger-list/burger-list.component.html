@@ -1,0 +1,19 @@
+<div class="burger-list">
+  <ng-container
+    *ngFor="let burger of burgerList; let i = index; trackBy: trackById"
+  >
+    <div class="burger-list__burger">
+      <app-burger
+        [burger]="burger"
+        (remove)="removeBurger($event)"
+        (nameChange)="changeBurgerName($event)"
+      >
+        <em>{{ i + 1 }}</em>
+      </app-burger>
+    </div>
+  </ng-container>
+
+  <div *ngIf="!burgerList">...loading</div>
+
+  <div appBold>bold</div>
+</div>

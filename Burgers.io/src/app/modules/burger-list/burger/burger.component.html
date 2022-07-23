@@ -1,0 +1,34 @@
+<div
+  class="burger"
+  [class.custom-class]="hasCustomClass"
+  *ngIf="burger"
+  [ngClass]="burger.name"
+  [title]="burger.name"
+  #burgerHTMLElement
+>
+  <ng-content></ng-content>
+  <div
+    class="burger__name"
+    [ngStyle]="{ color: 'red' }"
+    [style.font-size]="'20px'"
+    appBold
+  >
+    {{ burger?.name }}
+  </div>
+  <div>
+    {{ burger.description }}
+  </div>
+
+  <!-- <input
+    type="text"
+    class="burger__input"
+    *ngIf="burger.editable; else notEditable"
+    [(ngModel)]="burger.name"
+    (ngModelChange)="onNameChange()"
+  /> -->
+  <button (click)="onRemove()" type="button">remove</button>
+</div>
+
+<ng-template #notEditable>
+  <em>You can't edit this burger</em>
+</ng-template>
