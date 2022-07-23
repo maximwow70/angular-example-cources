@@ -14,7 +14,33 @@
 }
 
 .burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
   width: 300px;
+  min-height: 200px;
   padding: 20px;
   border-radius: 5px;
+
+  &__name {
+    margin-bottom: 10px;
+    color: #ff6768;
+  }
+
+  &__description {
+    flex: 1;
+  }
+
+  &__remove {
+    padding: 10px;
+    border: none;
+    background-color: #ff6768;
+
+    color: #fff;
+    text-transform: uppercase;
+
+    cursor: pointer;
+  }
 }

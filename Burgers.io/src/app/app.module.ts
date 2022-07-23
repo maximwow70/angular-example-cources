@@ -11,9 +11,10 @@ import { BurgerListDataService } from './modules/burger-list/services/burger-lis
 import { AboutComponent } from './components/about/about.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { HomeComponent } from './components/home/home.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, ContactsComponent, HomeComponent],
+  declarations: [AppComponent, AboutComponent, ContactsComponent, HomeComponent, NavigationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -33,8 +33,8 @@ export class BurgerListDataService {
       this._httpClient.get<Burger[]>('./assets/burgers.json'),
       this.getDefaultBurgers(),
     ]).pipe(
-      delay(3000),
-      map(([burgers, defaultBurgers]) => [...defaultBurgers, ...burgers])
+      delay(1000),
+      map(([burgers, defaultBurgers]) => [...burgers, ...defaultBurgers])
     );
   }
 }

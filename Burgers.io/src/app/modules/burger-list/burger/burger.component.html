@@ -9,13 +9,12 @@
   <ng-content></ng-content>
   <div
     class="burger__name"
-    [ngStyle]="{ color: 'red' }"
     [style.font-size]="'20px'"
     appBold
   >
     {{ burger?.name }}
   </div>
-  <div>
+  <div class="burger__description">
     {{ burger.description }}
   </div>
 
@@ -26,7 +25,7 @@
     [(ngModel)]="burger.name"
     (ngModelChange)="onNameChange()"
   /> -->
-  <button (click)="onRemove()" type="button">remove</button>
+  <button class="burger__remove" (click)="onRemove()" type="button">remove</button>
 </div>
 
 <ng-template #notEditable>

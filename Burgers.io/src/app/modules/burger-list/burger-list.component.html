@@ -8,12 +8,10 @@
         (remove)="removeBurger($event)"
         (nameChange)="changeBurgerName($event)"
       >
-        <em>{{ i + 1 }}</em>
+        <!-- <em>{{ i + 1 }}</em> -->
       </app-burger>
     </div>
   </ng-container>
 
   <div *ngIf="!burgerList">...loading</div>
-
-  <div appBold>bold</div>
 </div>
