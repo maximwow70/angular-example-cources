@@ -1,15 +1,19 @@
 .navigation {
-    background-color: #333;
-    padding: 20px;
-    
+  background-color: #333;
+  padding: 20px;
 
-    &__link {
-        margin-right: 10px;
+  &__link {
+    margin-right: 10px;
 
-        background-color: #fff;
-        padding: 5px 10px;
+    background-color: #fff;
+    padding: 5px 10px;
 
-        color: #333;
-        text-transform: uppercase;
+    color: #333;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &.active {
+      color: #ff6768;
     }
+  }
 }
