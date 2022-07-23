@@ -34,6 +34,19 @@
   }
 
   &__remove {
+    margin-bottom: 10px;
+
+    padding: 10px;
+    border: none;
+    background-color: #ff6768;
+
+    color: #fff;
+    text-transform: uppercase;
+
+    cursor: pointer;
+  }
+
+  &__select {
     padding: 10px;
     border: none;
     background-color: #ff6768;

@@ -4,6 +4,7 @@ import {
   Component,
   ViewChildren,
 } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   BehaviorSubject,
   combineLatest,
@@ -34,13 +35,15 @@ export class BurgerListComponent implements AfterViewInit {
 
   public burgerList: Array<Burger>;
 
-  title = 'Burgers.io';
+  public selectedBurger: Burger;
 
   public burgers$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor(
     private _cdr: ChangeDetectorRef,
-    private _burgerListDataService: BurgerListDataService
+    private _burgerListDataService: BurgerListDataService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   public ngOnInit(): void {
@@ -53,7 +56,7 @@ export class BurgerListComponent implements AfterViewInit {
     ])
       .pipe(take(10))
       .subscribe((a) => {
-        console.log(a);
+        // console.log(a);
       });
     // this.burgers$.next(6);
     // this.burgers$.next(7);
@@ -74,6 +77,10 @@ export class BurgerListComponent implements AfterViewInit {
         this._cdr.markForCheck();
         // console.log(this.burgerList, this.burgerList.length);
       });
+
+    this.activatedRoute.params.subscribe((params) => {
+      console.log(params);
+    })
   }
 
   ngAfterViewInit() {
@@ -90,6 +97,10 @@ export class BurgerListComponent implements AfterViewInit {
 
   public removeBurger(burger: Burger): void {
     this.burgerList = this.burgerList.filter((b) => b?.id !== burger.id);
+  }
+
+  public selectBurger(burger: Burger): void {
+    this.router.navigate(['/burgers', burger.id]);
   }
 
   public changeBurgerName(burger: Burger): void {}

@@ -6,6 +6,7 @@
       <app-burger
         [burger]="burger"
         (remove)="removeBurger($event)"
+        (select)="selectBurger($event)"
         (nameChange)="changeBurgerName($event)"
       >
         <!-- <em>{{ i + 1 }}</em> -->

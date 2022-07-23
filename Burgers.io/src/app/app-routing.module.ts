@@ -4,6 +4,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { HomeComponent } from './components/home/home.component';
 import { BurgerListComponent } from './modules/burger-list/burger-list.component';
+import { BurgerComponent } from './modules/burger-list/burger/burger.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'burgers',
+    component: BurgerListComponent,
+  },
+  {
+    path: 'burgers/:id',
     component: BurgerListComponent,
   },
   {
