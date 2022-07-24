@@ -20,7 +20,7 @@
   align-items: stretch;
 
   width: 300px;
-  min-height: 200px;
+  min-height: 230px;
   padding: 20px;
   border-radius: 5px;
 
@@ -34,6 +34,10 @@
   }
 
   &__remove {
+    margin-bottom: 10px;
+  }
+  &__remove,
+  &__select {
     padding: 10px;
     border: none;
     background-color: #ff6768;

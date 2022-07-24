@@ -2,7 +2,6 @@
     background-color: #333;
     padding: 20px;
     
-
     &__link {
         margin-right: 10px;
 
@@ -11,5 +10,11 @@
 
         color: #333;
         text-transform: uppercase;
+        text-decoration: none;
+
+        &.active {
+            background-color: #ff6768;
+            color: #fff;
+        }
     }
 }

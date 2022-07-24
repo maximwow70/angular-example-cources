@@ -29,6 +29,9 @@ export class BurgerComponent implements OnInit, OnChanges, OnDestroy {
   public remove: EventEmitter<Burger> = new EventEmitter<Burger>();
 
   @Output()
+  public select: EventEmitter<Burger> = new EventEmitter<Burger>();
+
+  @Output()
   public nameChange: EventEmitter<Burger> = new EventEmitter<Burger>();
 
   public hasCustomClass: boolean = true;
@@ -39,19 +42,23 @@ export class BurgerComponent implements OnInit, OnChanges, OnDestroy {
   constructor() {}
 
   public ngOnChanges(changes: SimpleChanges): void {
-    console.log(`onChanges: ${this.burger.name}`);
+    // console.log(`onChanges: ${this.burger.name}`);
   }
 
   public ngOnInit(): void {
-    console.log(`onInit: ${this.burger.name}`);
+    // console.log(`onInit: ${this.burger.name}`);
   }
 
   public ngOnDestroy(): void {
-    console.log(`onDestroy: ${this.burger.name}`);
+    // console.log(`onDestroy: ${this.burger.name}`);
   }
 
   public onRemove(): void {
     this.remove.emit(this.burger);
+  }
+
+  public onSelect(): void {
+    this.select.emit(this.burger);
   }
 
   public onNameChange(): void {

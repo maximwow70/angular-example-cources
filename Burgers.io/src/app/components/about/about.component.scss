@@ -1,0 +1,17 @@
+.about {
+    &__link {
+        margin-right: 10px;
+
+        background-color: #fff;
+        padding: 5px 10px;
+
+        color: #333;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &.active {
+            background-color: #ff6768;
+            color: #fff;
+        }
+    }
+}

@@ -1,5 +1,14 @@
 .app {
-    &__container {
-        padding: 20px;
-    }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__navigation {
+    height: 70px;
+  }
+  &__container {
+    padding: 20px;
+    flex: 1;
+    height: calc(100vh - 70px);
+  }
 }

@@ -1,17 +1,20 @@
 <div class="burger-list">
-  <ng-container
-    *ngFor="let burger of burgerList; let i = index; trackBy: trackById"
-  >
-    <div class="burger-list__burger">
-      <app-burger
-        [burger]="burger"
-        (remove)="removeBurger($event)"
-        (nameChange)="changeBurgerName($event)"
+  <div class="burger-list__burgers">
+    <ng-container
+      *ngFor="let burger of burgerList; let i = index; trackBy: trackById"
+    >
+      <div
+        class="burger-list__burger"
+        [class.selected]="burger.id === selectedBurger?.id"
+        (click)="selectBurger(burger)"
       >
-        <!-- <em>{{ i + 1 }}</em> -->
-      </app-burger>
-    </div>
-  </ng-container>
+        {{ burger.name }}
+      </div>
+    </ng-container>
+  </div>
+  <div class="burger-list__selected-burger" *ngIf="selectedBurger">
+    <app-burger [burger]="selectedBurger"></app-burger>
+  </div>
 
   <div *ngIf="!burgerList">...loading</div>
 </div>

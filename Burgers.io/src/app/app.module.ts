@@ -12,9 +12,11 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { DetailsComponent } from './component/details/details.component';
+import { TeamComponent } from './component/team/team.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, ContactsComponent, HomeComponent, NavigationComponent],
+  declarations: [AppComponent, AboutComponent, ContactsComponent, HomeComponent, NavigationComponent, DetailsComponent, TeamComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
