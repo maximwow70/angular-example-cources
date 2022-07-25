@@ -5,6 +5,7 @@ import { TeamComponent } from './component/team/team.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { HomeComponent } from './components/home/home.component';
+import { PipesPresentationComponent } from './components/pipes-presentation/pipes-presentation.component';
 import { ContactsGuardGuard } from './guards/contacts-guard.guard';
 import { BurgerListComponent } from './modules/burger-list/burger-list.component';
 
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'burgers/:id',
     component: BurgerListComponent,
+  },
+  {
+    path: 'pipes',
+    component: PipesPresentationComponent,
   },
   { path: 'burger-list', redirectTo: '/burgers' },
   { path: '**', redirectTo: '/' },
