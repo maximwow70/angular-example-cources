@@ -1,15 +1,16 @@
 <form class="app-contacts" (ngSubmit)="submit()">
   <div class="app-contacts--email">
-    <label class="app-contacts--email-label">email: </label>
+    <label class="app-contacts--email-label" for="contactsFormEmail">email: </label>
     <input
       class="app-contacts--email-value"
       [class.invalid]="contactsFormEmail.touched && contactsFormEmail.invalid"
       type="email"
+      id="contactsFormEmail"
       name="contactsFormEmail"
       #contactsFormEmail="ngModel"
       [(ngModel)]="email"
       placeholder="email"
-      pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+      pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
       required
     />
     <div

@@ -18,6 +18,7 @@ import { PipesPresentationComponent } from './components/pipes-presentation/pipe
 import ru from '@angular/common/locales/ru';
 import ar from '@angular/common/locales/ar';
 import { registerLocaleData } from '@angular/common';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
     DetailsComponent,
     TeamComponent,
     PipesPresentationComponent,
+    ReversePipe,
   ],
   imports: [
     BrowserModule,

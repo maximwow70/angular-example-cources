@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -18,6 +19,8 @@ export class PipesPresentationComponent implements OnInit {
   public e: number = 2.718281828459045;
 
   public today: Date = new Date();
+
+  public user$: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
 
   constructor() {}
 
